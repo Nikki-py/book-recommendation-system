@@ -1,6 +1,9 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import requests
+
+API_KEY = "AIzaSyCpC8X7BS44SiK85RxUMCN0-B7VEc9Q_wg"
 
 books = pd.read_csv("book_list.csv")
 books = books.loc[:, ~books.columns.str.contains('^Unnamed')]
@@ -56,3 +59,5 @@ for i in similar_scores:
         count += 1
     if count == 5:
         break
+
+
